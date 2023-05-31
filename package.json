@@ -1,0 +1,31 @@
+{
+  "name": "mobile-number-issuer-detector",
+  "version": "1.0.0",
+  "description": "This is a Sailscasts community project that detects the ISP provider of a mobile number.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepare": "husky install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rhinoxD/mobile-number-issuer-detector.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rhinoxD/mobile-number-issuer-detector/issues"
+  },
+  "homepage": "https://github.com/rhinoxD/mobile-number-issuer-detector#readme",
+  "devDependencies": {
+    "cz-conventional-changelog": "^3.3.0",
+    "husky": "^8.0.0",
+    "prettier": "2.8.8"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}
