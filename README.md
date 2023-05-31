@@ -10,9 +10,9 @@ Given a particular Nigerian mobile phone number, this project detects what ISP p
 - [] A UI to accept the numbers and then output the ISP provider
 
 ## Checklists
-- [] Unit test the algorithm with a subset of numbers
-- [] Setup e2e tests for evolution #2
-- 
+- [ ] Unit test the algorithm with a subset of numbers
+- [ ] Setup e2e tests for evolution #2
+
 ### Contributors
 
 <a href="https://github.com/sailscasts/isp-finder/graphs/contributors">
