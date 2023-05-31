@@ -6,13 +6,14 @@ Given a particular Nigerian mobile phone number, this project detects what ISP p
 
 ## Evolutions
 
-- [] A function that implements the algorithm to solve this problem
-- [] A UI to accept the numbers and then output the ISP provider
+- A function that implements the algorithm to solve this problem
+- A UI to accept the numbers and then output the ISP provider
 
-## Checklists
-- [] Unit test the algorithm with a subset of numbers
-- [] Setup e2e tests for evolution #2
-- 
+## Project requirements
+- Automated tests
+  -  Unit test the algorithm with a subset of numbers
+  - Setup e2e tests for evolution #2
+
 ### Contributors
 
 <a href="https://github.com/sailscasts/isp-finder/graphs/contributors">
