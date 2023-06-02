@@ -1,7 +1,7 @@
 const en = require("./locale/en");
 const fs = require("fs");
 const path = require("path");
-const jsonData = require("./numberPrefix.json")
+const jsonData = require("./number-prefix.json")
 
 function checkFormat(number) {
   // Regex pattern to match +234 followed by 10 digits or 0 followed by 10 digits
