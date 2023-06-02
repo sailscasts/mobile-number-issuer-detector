@@ -1,0 +1,26 @@
+{
+  "name": "mobile-number-issuer-detector",
+  "description": "This is a Sailscasts community project that detects the ISP provider of a mobile number.",
+  "version": "1.0.0",
+  "main": "app.js",
+  "bin": {
+    "mobile-number-issuer-detector": "bin/test.js"
+  },
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "node bin/test.js",
+    "start": "node index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@japa/api-client": "^1.4.4",
+    "@japa/expect": "^2.0.2",
+    "@japa/run-failed-tests": "^1.1.1",
+    "@japa/runner": "^2.5.1",
+    "@japa/spec-reporter": "^1.3.3"
+  }
+}

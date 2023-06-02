@@ -12,6 +12,11 @@ Given a particular Nigerian mobile phone number, this project detects what ISP p
 ## Project requirements
 - Automated tests
   -  Unit test the algorithm with a subset of numbers
+  
+  ~~~
+  npm run test
+  ~~~
+
   - Setup e2e tests for evolution #2
 
 ### Contributors
