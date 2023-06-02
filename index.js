@@ -1,8 +1,7 @@
 const en = require("./locale/en");
 const fs = require("fs");
 const path = require("path");
-
-let jsonData;
+const jsonData = require("./numberPrefix.json")
 
 function checkFormat(number) {
   // Regex pattern to match +234 followed by 10 digits or 0 followed by 10 digits
@@ -21,20 +20,7 @@ function checkFormat(number) {
 }
 
 async function searchJSONFile(prefix) {
-  if (jsonData) {
     return jsonData[prefix];
-  } else {
-    const filePath = path.join(__dirname, "numberPrefix.json");
-
-    try {
-      const fileData = await fs.promises.readFile(filePath, "utf-8");
-      jsonData = JSON.parse(fileData);
-      return jsonData[prefix];
-    } catch (error) {
-      console.error("Error reading JSON file:", error);
-      return null;
-    }
-  }
 }
 
 async function detectNumberIssuer(number) {
