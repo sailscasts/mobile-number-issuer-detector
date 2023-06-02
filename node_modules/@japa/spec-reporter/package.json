@@ -1,0 +1,133 @@
+{
+  "name": "@japa/spec-reporter",
+  "version": "1.3.3",
+  "description": "Spec reporter for japa test runner",
+  "main": "build/index.js",
+  "files": [
+    "build/src",
+    "build/index.d.ts",
+    "build/index.js"
+  ],
+  "exports": {
+    ".": "./build/index.js"
+  },
+  "scripts": {
+    "mrm": "mrm --preset=@adonisjs/mrm-preset",
+    "pretest": "npm run lint",
+    "test": "node bin/test.js",
+    "clean": "del-cli build",
+    "compile": "npm run lint && npm run clean && tsc",
+    "build": "npm run compile",
+    "prepublishOnly": "npm run build",
+    "lint": "eslint . --ext=.ts",
+    "format": "prettier --write .",
+    "commit": "git-cz",
+    "release": "np --message=\"chore(release): %s\"",
+    "version": "npm run build",
+    "sync-labels": "github-label-sync --labels ./node_modules/@adonisjs/mrm-preset/gh-labels.json japa/spec-reporter"
+  },
+  "keywords": [
+    "test",
+    "japa",
+    "reporter",
+    "spec"
+  ],
+  "author": "virk,japa",
+  "license": "MIT",
+  "devDependencies": {
+    "@adonisjs/mrm-preset": "^5.0.3",
+    "@adonisjs/require-ts": "^2.0.13",
+    "@japa/core": "^7.3.1",
+    "@japa/synthetic-events": "^2.0.2",
+    "@types/ms": "^0.7.31",
+    "@types/node": "^18.13.0",
+    "commitizen": "^4.3.0",
+    "cz-conventional-changelog": "^3.3.0",
+    "del-cli": "^5.0.0",
+    "eslint": "^8.33.0",
+    "eslint-config-prettier": "^8.6.0",
+    "eslint-plugin-adonis": "^2.1.1",
+    "eslint-plugin-prettier": "^4.2.1",
+    "github-label-sync": "^2.2.0",
+    "husky": "^8.0.3",
+    "japa": "^4.0.0",
+    "mrm": "^4.1.13",
+    "np": "^7.6.3",
+    "prettier": "^2.8.3",
+    "typescript": "^4.9.5"
+  },
+  "mrmConfig": {
+    "core": false,
+    "license": "MIT",
+    "services": [
+      "github-actions"
+    ],
+    "minNodeVersion": "16.13.1",
+    "probotApps": [
+      "stale",
+      "lock"
+    ],
+    "runGhActionsOnWindows": true
+  },
+  "eslintConfig": {
+    "extends": [
+      "plugin:adonis/typescriptPackage",
+      "prettier"
+    ],
+    "plugins": [
+      "prettier"
+    ],
+    "rules": {
+      "prettier/prettier": [
+        "error",
+        {
+          "endOfLine": "auto"
+        }
+      ]
+    }
+  },
+  "eslintIgnore": [
+    "build"
+  ],
+  "prettier": {
+    "trailingComma": "es5",
+    "semi": false,
+    "singleQuote": true,
+    "useTabs": false,
+    "quoteProps": "consistent",
+    "bracketSpacing": true,
+    "arrowParens": "always",
+    "printWidth": 100
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  },
+  "np": {
+    "contents": ".",
+    "anyBranch": false
+  },
+  "dependencies": {
+    "@japa/base-reporter": "^1.1.1",
+    "@japa/errors-printer": "^2.1.0",
+    "@poppinss/cliui": "^3.0.5",
+    "ms": "^2.1.3"
+  },
+  "publishConfig": {
+    "access": "public",
+    "tag": "latest"
+  },
+  "types": "./build/index.d.ts",
+  "directories": {
+    "example": "examples"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/japa/spec-reporter.git"
+  },
+  "bugs": {
+    "url": "https://github.com/japa/spec-reporter/issues"
+  },
+  "homepage": "https://github.com/japa/spec-reporter#readme"
+}

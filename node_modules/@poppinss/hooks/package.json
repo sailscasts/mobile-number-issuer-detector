@@ -1,0 +1,127 @@
+{
+  "name": "@poppinss/hooks",
+  "version": "6.0.2-0",
+  "description": "A no brainer hooks module for execute before/after lifecycle hooks",
+  "main": "build/index.js",
+  "files": [
+    "build/src",
+    "build/index.d.ts",
+    "build/index.js"
+  ],
+  "exports": {
+    ".": "./build/index.js"
+  },
+  "scripts": {
+    "mrm": "mrm --preset=@adonisjs/mrm-preset",
+    "pretest": "npm run lint",
+    "test": "node .bin/test.js",
+    "clean": "del build",
+    "compile": "npm run lint && npm run clean && tsc",
+    "build": "npm run compile",
+    "commit": "git-cz",
+    "release": "np --message=\"chore(release): %s\"",
+    "version": "npm run build",
+    "format": "prettier --write .",
+    "prepublishOnly": "npm run build",
+    "lint": "eslint . --ext=.ts",
+    "sync-labels": "github-label-sync --labels ./node_modules/@adonisjs/mrm-preset/gh-labels.json poppinss/hooks"
+  },
+  "devDependencies": {
+    "@adonisjs/mrm-preset": "^5.0.2",
+    "@adonisjs/require-ts": "^2.0.9",
+    "@types/node": "^17.0.18",
+    "commitizen": "^4.2.4",
+    "cz-conventional-changelog": "^3.3.0",
+    "del-cli": "^4.0.1",
+    "doctoc": "^2.0.1",
+    "eslint": "^8.9.0",
+    "eslint-config-prettier": "^8.4.0",
+    "eslint-plugin-adonis": "^2.1.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "github-label-sync": "^2.0.1",
+    "husky": "^7.0.1",
+    "japa": "^4.0.0",
+    "mrm": "^3.0.2",
+    "np": "^7.5.0",
+    "prettier": "^2.3.2",
+    "typescript": "^4.5.5"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/poppinss/hooks.git"
+  },
+  "keywords": [
+    "hooks",
+    "poppinss"
+  ],
+  "author": "virk,poppinss",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/poppinss/hooks/issues"
+  },
+  "homepage": "https://github.com/poppinss/hooks#readme",
+  "nyc": {
+    "exclude": [
+      "test"
+    ],
+    "extension": [
+      ".ts"
+    ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  },
+  "np": {
+    "contents": ".",
+    "anyBranch": false
+  },
+  "mrmConfig": {
+    "core": false,
+    "license": "MIT",
+    "services": [
+      "github-actions"
+    ],
+    "minNodeVersion": "16.13.1",
+    "probotApps": [
+      "stale",
+      "lock"
+    ],
+    "runGhActionsOnWindows": false
+  },
+  "eslintConfig": {
+    "extends": [
+      "plugin:adonis/typescriptPackage",
+      "prettier"
+    ],
+    "plugins": [
+      "prettier"
+    ],
+    "rules": {
+      "prettier/prettier": [
+        "error",
+        {
+          "endOfLine": "auto"
+        }
+      ]
+    }
+  },
+  "eslintIgnore": [
+    "build"
+  ],
+  "prettier": {
+    "trailingComma": "es5",
+    "semi": false,
+    "singleQuote": true,
+    "useTabs": false,
+    "quoteProps": "consistent",
+    "bracketSpacing": true,
+    "arrowParens": "always",
+    "printWidth": 100
+  },
+  "publishConfig": {
+    "access": "public",
+    "tag": "next"
+  }
+}

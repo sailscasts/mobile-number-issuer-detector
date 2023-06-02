@@ -1,0 +1,118 @@
+{
+	"name": "macroable",
+	"version": "7.0.2",
+	"description": "A simple ES6 class that can be extended to provide macros and getters functionality",
+	"main": "build/index.js",
+	"files": [
+		"build/index.d.ts",
+		"build/index.js"
+	],
+	"scripts": {
+		"mrm": "mrm --preset=@adonisjs/mrm-preset",
+		"pretest": "npm run lint",
+		"test": "node .bin/test.js",
+		"clean": "del build",
+		"compile": "npm run lint && npm run clean && tsc",
+		"build": "npm run compile",
+		"commit": "git-cz",
+		"release": "np --message=\"chore(release): %s\"",
+		"version": "npm run build",
+		"prepublishOnly": "npm run build",
+		"format": "prettier --write .",
+		"lint": "eslint . --ext=.ts",
+		"sync-labels": "github-label-sync --labels ./node_modules/@adonisjs/mrm-preset/gh-labels.json poppinss/macroable"
+	},
+	"keywords": [
+		"resetable"
+	],
+	"author": "amanvirk,adonisjs",
+	"license": "MIT",
+	"devDependencies": {
+		"@adonisjs/mrm-preset": "^5.0.3",
+		"@adonisjs/require-ts": "^2.0.13",
+		"@types/node": "^18.8.5",
+		"commitizen": "^4.2.5",
+		"cz-conventional-changelog": "^3.3.0",
+		"del-cli": "^5.0.0",
+		"doctoc": "^2.2.1",
+		"eslint": "^8.25.0",
+		"eslint-config-prettier": "^8.5.0",
+		"eslint-plugin-adonis": "^2.1.1",
+		"eslint-plugin-prettier": "^4.2.1",
+		"github-label-sync": "^2.2.0",
+		"husky": "^8.0.1",
+		"japa": "^4.0.0",
+		"mrm": "^4.1.6",
+		"np": "^7.6.2",
+		"prettier": "^2.7.1",
+		"typescript": "^4.8.4"
+	},
+	"nyc": {
+		"exclude": [
+			"test"
+		],
+		"extension": [
+			".ts"
+		]
+	},
+	"config": {
+		"commitizen": {
+			"path": "cz-conventional-changelog"
+		}
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/poppinss/macroable.git"
+	},
+	"bugs": {
+		"url": "https://github.com/poppinss/macroable/issues"
+	},
+	"homepage": "https://github.com/poppinss/macroable#readme",
+	"np": {
+		"contents": ".",
+		"anyBranch": false
+	},
+	"mrmConfig": {
+		"core": false,
+		"license": "MIT",
+		"services": [
+			"github-actions"
+		],
+		"minNodeVersion": "16.13.1",
+		"probotApps": [
+			"stale",
+			"lock"
+		],
+		"runGhActionsOnWindows": false
+	},
+	"eslintConfig": {
+		"extends": [
+			"plugin:adonis/typescriptPackage",
+			"prettier"
+		],
+		"plugins": [
+			"prettier"
+		],
+		"rules": {
+			"prettier/prettier": [
+				"error",
+				{
+					"endOfLine": "auto"
+				}
+			]
+		}
+	},
+	"eslintIgnore": [
+		"build"
+	],
+	"prettier": {
+		"trailingComma": "es5",
+		"semi": false,
+		"singleQuote": true,
+		"useTabs": false,
+		"quoteProps": "consistent",
+		"bracketSpacing": true,
+		"arrowParens": "always",
+		"printWidth": 100
+	}
+}

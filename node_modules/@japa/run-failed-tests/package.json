@@ -1,0 +1,127 @@
+{
+  "name": "@japa/run-failed-tests",
+  "version": "1.1.1",
+  "description": "Run only failed japa tests",
+  "main": "build/index.js",
+  "files": [
+    "build/index.d.ts",
+    "build/index.js"
+  ],
+  "exports": {
+    ".": "./build/index.js"
+  },
+  "scripts": {
+    "mrm": "mrm --preset=@adonisjs/mrm-preset",
+    "pretest": "npm run lint",
+    "test": "node .bin/test.js",
+    "clean": "del build",
+    "compile": "npm run lint && npm run clean && tsc",
+    "build": "npm run compile",
+    "prepublishOnly": "npm run build",
+    "lint": "eslint . --ext=.ts",
+    "format": "prettier --write .",
+    "commit": "git-cz",
+    "release": "np --message=\"chore(release): %s\"",
+    "version": "npm run build",
+    "sync-labels": "github-label-sync --labels ./node_modules/@adonisjs/mrm-preset/gh-labels.json japa/run-failed-tests"
+  },
+  "keywords": [
+    "japa",
+    "tests"
+  ],
+  "author": "virk,japa",
+  "license": "MIT",
+  "devDependencies": {
+    "@adonisjs/mrm-preset": "^5.0.3",
+    "@adonisjs/require-ts": "^2.0.13",
+    "@japa/runner": "^2.2.3",
+    "@types/fs-extra": "^11.0.1",
+    "@types/node": "^18.13.0",
+    "commitizen": "^4.3.0",
+    "cz-conventional-changelog": "^3.3.0",
+    "del-cli": "^5.0.0",
+    "eslint": "^8.33.0",
+    "eslint-config-prettier": "^8.6.0",
+    "eslint-plugin-adonis": "^2.1.1",
+    "eslint-plugin-prettier": "^4.2.1",
+    "github-label-sync": "^2.2.0",
+    "husky": "^8.0.3",
+    "japa": "^4.0.0",
+    "mrm": "^4.1.13",
+    "np": "^7.6.3",
+    "prettier": "^2.8.3",
+    "typescript": "^4.9.5"
+  },
+  "mrmConfig": {
+    "core": false,
+    "license": "MIT",
+    "services": [
+      "github-actions"
+    ],
+    "minNodeVersion": "16.13.1",
+    "probotApps": [
+      "stale",
+      "lock"
+    ],
+    "runGhActionsOnWindows": true
+  },
+  "eslintConfig": {
+    "extends": [
+      "plugin:adonis/typescriptPackage",
+      "prettier"
+    ],
+    "plugins": [
+      "prettier"
+    ],
+    "rules": {
+      "prettier/prettier": [
+        "error",
+        {
+          "endOfLine": "auto"
+        }
+      ]
+    }
+  },
+  "eslintIgnore": [
+    "build"
+  ],
+  "prettier": {
+    "trailingComma": "es5",
+    "semi": false,
+    "singleQuote": true,
+    "useTabs": false,
+    "quoteProps": "consistent",
+    "bracketSpacing": true,
+    "arrowParens": "always",
+    "printWidth": 100
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  },
+  "np": {
+    "contents": ".",
+    "anyBranch": false
+  },
+  "dependencies": {
+    "@poppinss/cliui": "^3.0.5",
+    "find-cache-dir": "^3.3.2",
+    "fs-extra": "^11.1.0"
+  },
+  "peerDependencies": {
+    "@japa/runner": "^2.2.3"
+  },
+  "publishConfig": {
+    "access": "public",
+    "tag": "latest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/japa/run-failed-tests.git"
+  },
+  "bugs": {
+    "url": "https://github.com/japa/run-failed-tests/issues"
+  },
+  "homepage": "https://github.com/japa/run-failed-tests#readme"
+}

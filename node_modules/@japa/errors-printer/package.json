@@ -1,0 +1,128 @@
+{
+  "name": "@japa/errors-printer",
+  "version": "2.1.0",
+  "description": "Reusable package to pretty print test runner summary errors",
+  "main": "build/index.js",
+  "files": [
+    "build/src",
+    "build/index.d.ts",
+    "build/index.js"
+  ],
+  "exports": {
+    ".": "./build/index.js"
+  },
+  "scripts": {
+    "mrm": "mrm --preset=@adonisjs/mrm-preset",
+    "pretest": "npm run lint",
+    "test": "node .bin/test.js",
+    "clean": "del-cli build",
+    "compile": "npm run lint && npm run clean && tsc",
+    "build": "npm run compile",
+    "prepublishOnly": "npm run build",
+    "lint": "eslint . --ext=.ts",
+    "format": "prettier --write .",
+    "commit": "git-cz",
+    "release": "np --message=\"chore(release): %s\"",
+    "version": "npm run build",
+    "sync-labels": "github-label-sync --labels ./node_modules/@adonisjs/mrm-preset/gh-labels.json japa/errors-printer"
+  },
+  "keywords": [
+    "japa",
+    "test",
+    "printer"
+  ],
+  "author": "virk,japa",
+  "license": "MIT",
+  "devDependencies": {
+    "@adonisjs/mrm-preset": "^5.0.3",
+    "@adonisjs/require-ts": "^2.0.13",
+    "@japa/assert": "^1.3.6",
+    "@types/node": "^18.11.19",
+    "commitizen": "^4.3.0",
+    "cz-conventional-changelog": "^3.3.0",
+    "del-cli": "^5.0.0",
+    "eslint": "^8.33.0",
+    "eslint-config-prettier": "^8.6.0",
+    "eslint-plugin-adonis": "^3.0.3",
+    "eslint-plugin-prettier": "^4.2.1",
+    "expect": "^29.4.1",
+    "github-label-sync": "^2.2.0",
+    "husky": "^8.0.3",
+    "japa": "^4.0.0",
+    "mrm": "^4.1.13",
+    "np": "^7.6.3",
+    "prettier": "^2.8.3",
+    "typescript": "^4.9.5"
+  },
+  "mrmConfig": {
+    "core": false,
+    "license": "MIT",
+    "services": [
+      "github-actions"
+    ],
+    "minNodeVersion": "16.13.1",
+    "probotApps": [
+      "stale",
+      "lock"
+    ],
+    "runGhActionsOnWindows": false
+  },
+  "eslintConfig": {
+    "extends": [
+      "plugin:adonis/typescriptPackage",
+      "prettier"
+    ],
+    "plugins": [
+      "prettier"
+    ],
+    "rules": {
+      "unicorn/prefer-node-protocol": "off",
+      "prettier/prettier": [
+        "error",
+        {
+          "endOfLine": "auto"
+        }
+      ]
+    }
+  },
+  "eslintIgnore": [
+    "build"
+  ],
+  "prettier": {
+    "trailingComma": "es5",
+    "semi": false,
+    "singleQuote": true,
+    "useTabs": false,
+    "quoteProps": "consistent",
+    "bracketSpacing": true,
+    "arrowParens": "always",
+    "printWidth": 100
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  },
+  "np": {
+    "contents": ".",
+    "anyBranch": false
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/japa/errors-printer.git"
+  },
+  "bugs": {
+    "url": "https://github.com/japa/errors-printer/issues"
+  },
+  "homepage": "https://github.com/japa/errors-printer#readme",
+  "dependencies": {
+    "@poppinss/cliui": "^3.0.5",
+    "jest-diff": "^29.4.1",
+    "youch": "^3.2.3",
+    "youch-terminal": "^2.2.0"
+  },
+  "publishConfig": {
+    "access": "public",
+    "tag": "latest"
+  }
+}

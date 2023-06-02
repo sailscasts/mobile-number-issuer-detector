@@ -1,0 +1,82 @@
+[
+  {
+    "number": "08141145738",
+    "expectedISP": "MTN"
+  },
+  {
+    "number": "07081234567",
+    "expectedISP": "Airtel"
+  },
+  {
+    "number": "09091234567",
+    "expectedISP": "Unknown"
+  },
+  {
+    "number": "08035061679",
+    "expectedISP": "MTN"
+  },
+  {
+    "number": "09072659157",
+    "expectedISP": "MTN"
+  },
+  {
+    "number": "07066999486",
+    "expectedISP": "MTN"
+  },
+  {
+    "number": "08166253140",
+    "expectedISP": "MTN"
+  },
+  {
+    "number": "08068505022",
+    "expectedISP": "MTN"
+  },
+  {
+    "number": "09160590445",
+    "expectedISP": "MTN"
+  },
+  {
+    "number": "07038248791",
+    "expectedISP": "MTN"
+  },
+  {
+    "number": "0909089704",
+    "expectedISP": "Etisalat"
+  },
+  {
+    "number": "09053219099",
+    "expectedISP": "GLO"
+  },
+  {
+    "number": "09152132879",
+    "expectedISP": "GLO"
+  },
+  {
+    "number": "07016425049",
+    "expectedISP": "AIRTEL"
+  },
+  {
+    "number": "07032977641",
+    "expectedISP": "AIRTEL"
+  },
+  {
+    "number": "09011775608",
+    "expectedISP": "AIRTEL"
+  },
+  {
+    "number": "08087810601",
+    "expectedISP": "AIRTEL"
+  },
+  {
+    "number": "09122798737",
+    "expectedISP": "AIRTEL"
+  },
+  {
+    "number": "08022788439",
+    "expectedISP": "AIRTEL"
+  },
+  {
+    "number": "08035061679",
+    "expectedISP": "AIRTEL"
+  }
+]

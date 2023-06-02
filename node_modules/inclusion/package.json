@@ -1,0 +1,34 @@
+{
+  "name": "inclusion",
+  "version": "1.0.1",
+  "description": "Dynamic imports for all",
+  "main": "index.js",
+  "scripts": {
+    "test": "tap --no-esm"
+  },
+  "keywords": [
+    "import",
+    "require",
+    "dynamic",
+    "typescript",
+    "babel",
+    "esm",
+    "cjs"
+  ],
+  "author": "@davidmarkclem",
+  "license": "ISC",
+  "dependencies": {
+    "parent-module": "^2.0.0"
+  },
+  "devDependencies": {
+    "tap": "^14.11.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/davidmarkclements/inclusion.git"
+  },
+  "bugs": {
+    "url": "https://github.com/davidmarkclements/inclusion/issues"
+  },
+  "homepage": "https://github.com/davidmarkclements/inclusion#readme"
+}

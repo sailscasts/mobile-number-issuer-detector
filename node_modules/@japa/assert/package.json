@@ -1,0 +1,136 @@
+{
+  "name": "@japa/assert",
+  "version": "1.4.1",
+  "description": "Assertion module for Japa",
+  "main": "build/index.js",
+  "files": [
+    "build/src",
+    "build/index.d.ts",
+    "build/index.js"
+  ],
+  "exports": {
+    ".": "./build/index.js"
+  },
+  "scripts": {
+    "mrm": "mrm --preset=@adonisjs/mrm-preset",
+    "pretest": "npm run lint",
+    "test": "node .bin/test.js",
+    "clean": "del build",
+    "compile": "npm run lint && npm run clean && tsc",
+    "build": "npm run compile",
+    "prepublishOnly": "npm run build",
+    "lint": "eslint . --ext=.ts",
+    "format": "prettier --write .",
+    "commit": "git-cz",
+    "release": "np --message=\"chore(release): %s\"",
+    "version": "npm run build",
+    "sync-labels": "github-label-sync --labels ./node_modules/@adonisjs/mrm-preset/gh-labels.json japa/assert"
+  },
+  "keywords": [
+    "assert",
+    "chai",
+    "japa"
+  ],
+  "author": "virk,japa",
+  "license": "MIT",
+  "peerDependencies": {
+    "@japa/runner": "^2.1.1"
+  },
+  "devDependencies": {
+    "@adonisjs/mrm-preset": "^5.0.3",
+    "@adonisjs/require-ts": "^2.0.13",
+    "@japa/core": "^7.3.1",
+    "@japa/runner": "^2.3.0",
+    "@types/luxon": "^3.2.0",
+    "@types/node": "^18.13.0",
+    "commitizen": "^4.3.0",
+    "cz-conventional-changelog": "^3.3.0",
+    "del-cli": "^5.0.0",
+    "eslint": "^8.33.0",
+    "eslint-config-prettier": "^8.6.0",
+    "eslint-plugin-adonis": "^2.1.1",
+    "eslint-plugin-prettier": "^4.2.1",
+    "github-label-sync": "^2.2.0",
+    "husky": "^8.0.3",
+    "japa": "^4.0.0",
+    "luxon": "^3.2.1",
+    "mrm": "^4.1.13",
+    "np": "^7.6.3",
+    "prettier": "^2.8.4",
+    "typescript": "^4.9.5"
+  },
+  "mrmConfig": {
+    "core": false,
+    "license": "MIT",
+    "services": [
+      "github-actions"
+    ],
+    "minNodeVersion": "16.13.1",
+    "probotApps": [
+      "stale",
+      "lock"
+    ],
+    "runGhActionsOnWindows": false
+  },
+  "eslintConfig": {
+    "extends": [
+      "plugin:adonis/typescriptPackage",
+      "prettier"
+    ],
+    "plugins": [
+      "prettier"
+    ],
+    "rules": {
+      "prettier/prettier": [
+        "error",
+        {
+          "endOfLine": "auto"
+        }
+      ]
+    }
+  },
+  "eslintIgnore": [
+    "build"
+  ],
+  "prettier": {
+    "trailingComma": "es5",
+    "semi": false,
+    "singleQuote": true,
+    "useTabs": false,
+    "quoteProps": "consistent",
+    "bracketSpacing": true,
+    "arrowParens": "always",
+    "printWidth": 100
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  },
+  "np": {
+    "contents": ".",
+    "anyBranch": false
+  },
+  "dependencies": {
+    "@types/chai": "^4.3.4",
+    "api-contract-validator": "^2.2.8",
+    "chai": "^4.3.7",
+    "macroable": "^7.0.2"
+  },
+  "publishConfig": {
+    "access": "public",
+    "tag": "latest"
+  },
+  "types": "./build/index.d.ts",
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/japa/assert.git"
+  },
+  "bugs": {
+    "url": "https://github.com/japa/assert/issues"
+  },
+  "homepage": "https://github.com/japa/assert#readme"
+}
