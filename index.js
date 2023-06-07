@@ -1,6 +1,4 @@
 const en = require("./locale/en");
-const fs = require("fs");
-const path = require("path");
 const jsonData = require("./number-prefix.json")
 
 function checkFormat(number) {
@@ -20,7 +18,12 @@ function checkFormat(number) {
 }
 
 async function searchJSONFile(prefix) {
-    return jsonData[prefix];
+  for (const key in jsonData) {
+    if (jsonData[key].includes(prefix)) {
+      return key;
+    }
+  }
+  return undefined; 
 }
 
 async function detectNumberIssuer(number) {
