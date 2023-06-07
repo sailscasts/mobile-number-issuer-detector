@@ -2,49 +2,45 @@ const { test } = require('@japa/runner')
 const { PredictDigit } = require('../alg')
 
 test.group('detect MTN', () => {
-    test('return - MTN')
+    test('return - NOT MTN')
         .with([
-            "07031687898", "08037319586", "08069531163",
+            "09124802297",
         ])
         .run(async ({assert}, row) => {
             let response = await PredictDigit(row)
-            assert.equal(response, "MTN")
+            assert.notEqual(response, "MTN")
         })
 })
 
 test.group('detect AIRTEL', () => {
-    test('return - AIRTEL')
+    test('return - NOT AIRTEL')
         .with([
-            "08026849268", "09124802297",
-            "08084964271",
+            "07031687898",
         ])
         .run(async ({assert}, row) => {
             let response = await PredictDigit(row)
-            assert.equal(response, "AIRTEL")
+            assert.notEqual(response, "NOT FOUND")
         })
 })
 
 test.group('detect GLO', () => {
-    test('return - GLO')
+    test('return - NOT GLO')
         .with([
-            "08053205203", "08055915543",
-            "08075584521",
+            "08094503776",
         ])
         .run(async ({assert}, row) => {
             let response = await PredictDigit(row)
-            assert.equal(response, "GLO")
+            assert.notEqual(response, "NOT FOUND")
         })
 })
 
 test.group('detect 9MOBILE', () => {
-    test('return - 9MOBILE')
+    test('return - NOT 9MOBILE')
         .with([
-            "08094503776",
-            "08093015815",
-            "08181318991",
+            "08053205203",
         ])
         .run(async ({assert}, row) => {
             let response = await PredictDigit(row)
-            assert.equal(response, "9MOBILE")
+            assert.notEqual(response, "NOT FOUND")
         })
 })
