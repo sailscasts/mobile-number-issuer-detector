@@ -1,7 +1,6 @@
-const { assert } = require("@japa/assert");
-const { specReporter } = require("@japa/spec-reporter");
-const { runFailedTests } = require("@japa/run-failed-tests");
-const { processCliArgs, configure, run } = require("@japa/runner");
+const { assert } = require('@japa/assert')
+const { specReporter } = require('@japa/spec-reporter')
+const { processCliArgs, configure, run } = require('@japa/runner')
 
 /*
 |--------------------------------------------------------------------------
@@ -19,12 +18,12 @@ const { processCliArgs, configure, run } = require("@japa/runner");
 configure({
   ...processCliArgs(process.argv.slice(2)),
   ...{
-    files: ["tests/**/*.spec.js"],
-    plugins: [assert(), runFailedTests()],
+    files: ['tests/**/*.spec.js'],
+    plugins: [assert()],
     reporters: [specReporter()],
     importer: (filePath) => require(filePath),
   },
-});
+})
 
 /*
 |--------------------------------------------------------------------------
@@ -34,48 +33,4 @@ configure({
 | The following "run" method is required to execute all the tests.
 |
 */
-
-//require the ispdetector file here too
-// const { detectIspProvider } = require("ispdetector.js");
-
-// //import json file
-// const testData = require("./testData.json");
-
-const { test } = require("@japa/runner");
-
-//write test
-test("detectIspProvider function should correctly detect Airtel network for 0802....", (assert) => {
-  assert.equal(detectIspProvider("08022788439"), "Airtel");
-});
-
-test("detectIspProvider function should correctly detect Airtel network for 0912....", (assert) => {
-  assert.equal(detectIspProvider("09122798737"), "Airtel");
-});
-
-test("detectIspProvider function should corrrectly detect MTN network for 0803....", (assert) => {
-  assert.equal(detectIspProvider("08039243752"));
-});
-
-test("detectIspProvider function should corrrectly detect MTN network for 0703....", (assert) => {
-  assert.equal(detectIspProvider("07038248791"));
-});
-test("detectIspProvider function should correctly detect Etisalat network for 0909", (assert) => {
-  assert.equal(detectIspProvider("0909"));
-});
-test("detectIspProvider function shoudl cprrectly detect GLO network for 0915", (assert) => {
-  assert.equal(detectIspProvider("09152132879"));
-});
-
-test("detectIspProvider function should correctly detect unknown network provider", (assert) => {
-  assert.equal(detectIspProvider("Unknown"));
-});
-
-//iterate over test data array in the json file
-for (const { number, expectedISP } of testData) {
-  test(`Detect network provider for ${number}`, (assert) => {
-    const provider = detectIspProvider(number);
-    assert.equal(provider, expectedISP);
-  });
-}
-
-run();
+run()

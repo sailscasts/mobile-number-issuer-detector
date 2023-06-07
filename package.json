@@ -7,7 +7,7 @@
     "test": "test"
   },
   "scripts": {
-    "test": "japa"
+    "test": "japa tests/actualtest.spec.js"
   },
   "repository": {
     "type": "git",
