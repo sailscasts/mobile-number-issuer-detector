@@ -1,4 +1,5 @@
 const { expect } = require('@japa/expect')
+const { assert } = require('@japa/assert')
 const { apiClient } = require('@japa/api-client')
 const { specReporter } = require('@japa/spec-reporter')
 const { runFailedTests } = require('@japa/run-failed-tests')
@@ -21,7 +22,7 @@ configure({
   ...processCliArgs(process.argv.slice(2)),
   ...{
     files: ['tests/**/*.spec.js'],
-    plugins: [expect(), runFailedTests(), apiClient('http://localhost:3333')],
+    plugins: [expect(), runFailedTests(), apiClient('http://localhost:3333'), assert()],
     reporters: [specReporter()],
     importer: (filePath) => require(filePath),
   },

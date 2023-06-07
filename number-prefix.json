@@ -1,47 +1,67 @@
 {
-    "0809": "9Mobile Nigeria",
-    "0818": "9Mobile Nigeria",
-    "0817": "9Mobile Nigeria",
-    "0909": "9Mobile Nigeria",
-    "0908": "9Mobile Nigeria",
-    "0701": "Airtel Nigeria",
-    "0708": "Airtel Nigeria",
-    "0812": "Airtel Nigeria",
-    "0802": "Airtel Nigeria",
-    "0808": "Airtel Nigeria",
-    "0902": "Airtel Nigeria",
-    "0901": "Airtel Nigeria",
-    "0904": "Airtel Nigeria",
-    "0907": "Airtel Nigeria",
-    "0912": "Airtel Nigeria",
-    "0815": "GLO Nigeria",
-    "0811": "GLO Nigeria",
-    "0805": "GLO Nigeria",
-    "0807": "GLO Nigeria",
-    "0705": "GLO Nigeria",
-    "0905": "GLO Nigeria",
-    "0915": "GLO Nigeria",
-    "0703": "MTN Nigeria",
-    "0706": "MTN Nigeria",
-    "0803": "MTN Nigeria",
-    "0806": "MTN Nigeria",
-    "0810": "MTN Nigeria",
-    "0813": "MTN Nigeria",
-    "0816": "MTN Nigeria",
-    "0814": "MTN Nigeria",
-    "0903": "MTN Nigeria",
-    "0906": "MTN Nigeria",
-    "0913": "MTN Nigeria",
-    "0916": "MTN Nigeria",
-    "0704": "MTN Nigeria",
-    "07027": "Multilinks Nigeria",
-    "0709": "Multilinks Nigeria",
-    "0804": "NTEL Nigeria",
-    "0702": "Smile Nigeria",
-    "07028": "Starcomms Nigeria",
-    "07029": "Starcomms Nigeria",
-    "0819": "Starcomms Nigeria",
-    "07025": "Visafone",
-    "07026": "Visafone",
-    "0707": "ZOOM MOBILE"
+    "9Mobile Nigeria": [
+        "0809",
+        "0818",
+        "0817",
+        "0909",
+        "0908"
+    ],
+    "Airtel Nigeria": [
+        "0701",
+        "0708",
+        "0812",
+        "0802",
+        "0808",
+        "0902",
+        "0901",
+        "0904",
+        "0907",
+        "0912"
+    ],
+    "GLO Nigeria": [
+        "0815",
+        "0811",
+        "0805",
+        "0807",
+        "0705",
+        "0905",
+        "0915"
+    ],
+    "MTN Nigeria": [
+        "0703",
+        "0706",
+        "0803",
+        "0806",
+        "0810",
+        "0813",
+        "0816",
+        "0814",
+        "0903",
+        "0906",
+        "0913",
+        "0916",
+        "0704"
+    ],
+    "Multilinks Nigeria": [
+        "07027",
+        "0709"
+    ],
+    "NTEL Nigeria": [
+        "0804"
+    ],
+    "Smile Nigeria": [
+        "0702"
+    ],
+    "Starcomms Nigeria": [
+        "07028",
+        "07029",
+        "0819"
+    ],
+    "Visafone": [
+        "07025",
+        "07026"
+    ],
+    "ZOOM MOBILE": [
+        "0707"
+    ]
 }
