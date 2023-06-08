@@ -8,7 +8,7 @@ test('synchronous passing test', (t) => {
   });
 
 test('synchronous passing test', async (t) => {
-    //test without the starting zero
+    //test with the starting zero
     checkerFunction('+23408117721987');
   });
 
@@ -16,3 +16,5 @@ test('synchronous passing test', async (t) => {
     //test without the nigeria country code
     checkerFunction('08023271639');
   });
+
+  
