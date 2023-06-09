@@ -1,4 +1,4 @@
-const prefixData = require('../utils/data.js');
+const prefixData = require('../utils/data.json');
 const numberValidator = require('../utils/numberValidator.js');
 
 const checkerFunction = function(number){
