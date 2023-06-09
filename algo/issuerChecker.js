@@ -2,7 +2,7 @@ const prefixData = require('../utils/data.js');
 const numberValidator = require('../utils/numberValidator.js');
 
 const checkerFunction = function(number){
-    var issuer;
+    var issuer = '';
     var prefix;
     if(numberValidator(number)){
         prefix = number.slice(0,4);
@@ -18,7 +18,6 @@ const checkerFunction = function(number){
         Object.entries(prefixData).forEach(([key, value]) => {
             if(value.includes(prefix)){
                 issuer = key;
-                return `your network provider is ${issuer}`;
             }
         });
         console.log(`your network provider is ${issuer}`);
@@ -27,6 +26,7 @@ const checkerFunction = function(number){
         console.log('please enter a valid number');
         throw new Error('Invalid Number');
     }
+    return issuer;
 }
 
 module.exports = checkerFunction;
