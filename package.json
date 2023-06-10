@@ -1,9 +1,0 @@
-{
-  "scripts": {
-    "start": "node app.js",
-    "test": "node test/test.js"
-  },
-  "dependencies": {
-    "google-libphonenumber": "^3.2.32"
-  }
-}
