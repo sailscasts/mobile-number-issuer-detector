@@ -10,12 +10,12 @@ function PredictDigit(digit) {
     // the other for if predicted or not
     var result, success = false
 
+    const check = CheckFormat(digit)
+
     for (let key in dataset) {
 
         // get array for each key
         dataset[key].forEach((value, index, array) => {
-
-            const check = CheckFormat(digit)
 
             if (check == true) {
                 // slice the digit to match each prefix in the array
