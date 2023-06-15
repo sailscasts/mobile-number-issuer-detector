@@ -2,6 +2,7 @@
 
 // get json file
 const dataset = require('../assets/prefixes.json')
+const en = require('../locale/en')
 const CheckFormat = require('./utils/number-validator')
 
 function PredictDigit(digit) {
@@ -34,10 +35,10 @@ function PredictDigit(digit) {
     }
 
     if (!success) {
-        result = "NOT FOUND"
+        result = en.no_issuer_found;
     }
 
-    return result
+    return result;
 
 }
 

@@ -37,5 +37,8 @@
   "lint-staged": {
     "*.js": "npm run lint",
     "*.--write": "npm run format"
+  },
+  "dependencies": {
+    "@japa/expect": "^2.0.2"
   }
 }
