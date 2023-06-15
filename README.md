@@ -16,7 +16,7 @@ Given a particular Nigerian mobile phone number, this project detects what ISP p
 
 ### Contributors
 
-<a href="https://github.com/sailscasts/isp-finder/graphs/contributors">
+<a href="https://github.com/sailscasts/mobile-number-issuer-detector/graphs/contributors">
   <p align="center">
     <img  src="https://contrib.rocks/image?repo=sailscasts/isp-finder" alt="A table of avatars from the project's contributors" />
   </p>
