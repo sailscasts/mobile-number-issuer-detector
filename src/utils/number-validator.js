@@ -8,7 +8,7 @@ function CheckFormat(number) {
     if (pattern.test(number)) {
         message = true;
     } else {
-        if (number.length != 11 && number.startsWith("0")) {
+        if (number.length !== 11 && number.startsWith("0")) {
         message = "invalid dial code";
         } else {
         message = "invalid format";
