@@ -8,7 +8,10 @@
   },
   "scripts": {
     "test": "node bin/test.js",
-    "prepare": "husky install"
+    "dev": "node src/app.js",
+    "prepare": "husky install",
+    "lint": "eslint . --fix --max-warnings=0",
+    "format": "prettier . --write"
   },
   "repository": {
     "type": "git",
@@ -24,6 +27,15 @@
     "@japa/assert": "^1.4.1",
     "@japa/runner": "^2.5.1",
     "@japa/spec-reporter": "^1.3.3",
-    "husky": "^8.0.0"
+    "eslint": "^8.42.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-import": "^2.27.5",
+    "husky": "^8.0.0",
+    "prettier": "2.8.8"
+  },
+  "lint-staged": {
+    "*.js": "npm run lint",
+    "*.--write": "npm run format"
   }
 }
