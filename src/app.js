@@ -4,7 +4,7 @@
 const dataset = require('../assets/prefixes.json');
 const CheckFormat = require('./utils/number-validator');
 
-export function PredictDigit(digit) {
+function PredictDigit(digit) {
 	// two variables, one to hold output and
 	// the other for if predicted or not
 	var result,
