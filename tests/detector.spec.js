@@ -1,6 +1,6 @@
 const { test } = require('@japa/runner');
 
-const en = require('../locale/en');
+const en = require('../src/locale/en');
 const { PredictDigit } = require('../src/app');
 
 test.group('Check the number format', (group) => {
