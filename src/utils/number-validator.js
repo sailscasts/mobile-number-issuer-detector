@@ -1,4 +1,4 @@
-const en = require('../locale/en');
+const en = require('./en');
 
 function CheckFormat(number) {
   // Regex pattern to match +234 followed by 10 digits or 0 followed by 10 digits

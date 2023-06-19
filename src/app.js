@@ -1,6 +1,6 @@
 // get json file
 const dataset = require('../assets/prefixes.json');
-const en = require('./locale/en');
+const en = require('./utils/en');
 const CheckFormat = require('./utils/number-validator');
 
 function PredictDigit(digit) {
