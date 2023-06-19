@@ -1,7 +1,7 @@
 const { test } = require('@japa/runner');
 
 const en = require('../src/locale/en');
-const { PredictDigit } = require('../src/app');
+const { PredictDigit } = require('../src/predict-digit');
 
 test.group('Check the number format', (group) => {
   test(`return ${en.invalid_dial_code} when number is 09090`, ({ expect }) => {
