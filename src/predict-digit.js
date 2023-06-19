@@ -1,18 +1,17 @@
-'use strict';
-
 // get json file
 const dataset = require('../assets/prefixes.json');
-const CheckFormat = require('./utils/number-validator');
+const en = require('./utils/en');
+const checkFormat = require('./utils/check-format');
 
-function PredictDigit(digit) {
+function predictDigit(digit) {
 	// two variables, one to hold output and
 	// the other for if predicted or not
-	var result,
-		success = false;
+	let result;
+	let success = false;
 
-	const check = CheckFormat(digit);
+	const check = checkFormat(digit);
 
-	for (let key in dataset) {
+	for (const key in dataset) {
 		// get array for each key
 		dataset[key].forEach((value, index, array) => {
 			if (check == true) {
@@ -32,10 +31,10 @@ function PredictDigit(digit) {
 	}
 
 	if (!success) {
-		result = 'NOT FOUND';
+		result = en.no_issuer_found;
 	}
 
 	return result;
 }
 
-module.exports = { PredictDigit };
+module.exports = { predictDigit };

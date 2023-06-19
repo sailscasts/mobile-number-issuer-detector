@@ -1,43 +1,70 @@
-const { test } = require('@japa/runner')
-const { PredictDigit } = require('../src/app')
+const { test } = require('@japa/runner');
 
-test.group('detect issuer', () => {
-    test('return - MTN')
-        .with([
-            "07031687898", "08037319586", "08069531163",
-        ])
-        .run(async ({assert}, row) => {
-            let response = await PredictDigit(row)
-            assert.equal(response, "MTN")
-        });
+const en = require('../src/utils/en');
+const { predictDigit } = require('../src/predict-digit');
 
-    test('return - AIRTEL')
-        .with([
-            "08026849268", "09124802297",
-            "08084964271",
-        ])
-        .run(async ({assert}, row) => {
-            let response = await PredictDigit(row)
-            assert.equal(response, "AIRTEL")
-        });
-    test('return - GLO')
-        .with([
-            "08053205203", "08055915543",
-            "08075584521",
-        ])
-        .run(async ({assert}, row) => {
-            let response = await PredictDigit(row)
-            assert.equal(response, "GLO")
-        });
-        
-    test('return - 9MOBILE')
-        .with([
-            "08094503776",
-            "08093015815",
-            "08181318991",
-        ])
-        .run(async ({assert}, row) => {
-            let response = await PredictDigit(row)
-            assert.equal(response, "9MOBILE")
-        })
-})
+test.group('Check the number format', (group) => {
+  test(`return ${en.invalid_dial_code} when number is 09090`, ({ expect }) => {
+    const response = predictDigit('09090');
+
+    expect(response).toBe(en.invalid_dial_code);
+  });
+  test(`return ${en.invalid_dial_code} when number is 0987654312345`, ({ expect }) => {
+    const response = predictDigit('0987654312345');
+
+    expect(response).toBe(en.invalid_dial_code);
+  });
+  test(`return ${en.invalid_phone_number_format} when number is +2349056144059`, ({ expect }) => {
+    const response = predictDigit('+2349056144059');
+
+    expect(response).toBe(en.invalid_phone_number_format);
+  });
+  test(`return ${en.invalid_phone_number_format} when number is +23490238`, ({ expect }) => {
+    const response = predictDigit('+23490238');
+
+    expect(response).toBe(en.invalid_phone_number_format);
+  });
+  test(`return ${en.invalid_phone_number_format} when number is +234902389847329873292`, ({ expect }) => {
+    const response = predictDigit('+234902389847329873292');
+
+    expect(response).toBe(en.invalid_phone_number_format);
+  });
+  test(`return ${en.invalid_phone_number_format} when number is 783282`, ({ expect }) => {
+    const response = predictDigit('783282');
+
+    expect(response).toBe(en.invalid_phone_number_format);
+  });
+  test(`return ${en.invalid_phone_number_format} when number is +91838439833`, ({ expect }) => {
+    const response = predictDigit('+91838439833');
+
+    expect(response).toBe(en.invalid_phone_number_format);
+  });
+});
+
+test.group('Check Issuer', (group) => {
+  test('return GLO when number is 09056144059', ({ expect }) => {
+    const response = predictDigit('09056144059');
+
+    expect(response).toBe('GLO');
+  });
+  test('return MTN when number is 08037748077', ({ expect }) => {
+    const response = predictDigit('08037748077');
+
+    expect(response).toBe('MTN');
+  });
+  test('return AIRTEL when number is 09075152756', ({ expect }) => {
+    const response = predictDigit('09075152756');
+
+    expect(response).toBe('AIRTEL');
+  });
+  test('return 9MOBILE when number is 08184892004', ({ expect }) => {
+    const response = predictDigit('08184892004');
+
+    expect(response).toBe('9MOBILE');
+  });
+  test('return MTN when number is 08144103168', ({ expect }) => {
+    const response = predictDigit('08144103168');
+
+    expect(response).toBe('MTN');
+  });
+});
