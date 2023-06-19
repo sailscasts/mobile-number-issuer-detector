@@ -36,7 +36,7 @@ p {
 
 button {
   padding: 10px 20px;
-  background-color: rgba(81, 29, 102, 0.357);
+  background-color: rgba(74, 16, 97, 0.988);
   color: white;
   border: none;
   border-radius: 5px;
@@ -44,9 +44,12 @@ button {
 }
 
 button:hover {
-  background-color: rgba(74, 16, 97, 0.988);
+  background-color: rgba(59, 13, 77, 0.988);
 }
 
+button:active{
+  background-color: rgba(64, 23, 80, 0.568);
+}
 #result {
   font-size: 20px;
   font-weight: bold;
