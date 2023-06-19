@@ -1,4 +1,4 @@
-import { PredictDigit } from './app';
+import { PredictDigit } from './predict-digit';
 
 // check if DOM is loaded first
 document?.addEventListener('DOMContentLoaded', () => {
