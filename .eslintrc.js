@@ -1,4 +1,4 @@
-const os = require('os');
+const os = require('os')
 
 module.exports = {
   env: {
@@ -11,6 +11,9 @@ module.exports = {
     ecmaVersion: 'latest',
   },
   rules: {
-    'linebreak-style': ['error', os.platform() === 'win32' ? 'windows' : 'unix'],
+    'linebreak-style': [
+      'error',
+      os.platform() === 'win32' ? 'windows' : 'unix',
+    ],
   },
-};
+}

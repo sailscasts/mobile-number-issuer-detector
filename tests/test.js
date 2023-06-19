@@ -1,7 +1,7 @@
-const { expect } = require('@japa/expect');
-const { assert } = require('@japa/assert');
-const { specReporter } = require('@japa/spec-reporter');
-const { processCliArgs, configure, run } = require('@japa/runner');
+const {expect} = require('@japa/expect')
+const {assert} = require('@japa/assert')
+const {specReporter} = require('@japa/spec-reporter')
+const {processCliArgs, configure, run} = require('@japa/runner')
 
 /*
 |--------------------------------------------------------------------------
@@ -22,9 +22,9 @@ configure({
     files: ['tests/**/*.spec.js'],
     plugins: [assert(), expect()],
     reporters: [specReporter()],
-    importer: (filePath) => require(filePath),
+    importer: filePath => require(filePath),
   },
-});
+})
 
 /*
 |--------------------------------------------------------------------------
@@ -34,4 +34,4 @@ configure({
 | The following "run" method is required to execute all the tests.
 |
 */
-run();
+run()
