@@ -1,4 +1,4 @@
-const os = require('os');
+const os = require("os");
 
 module.exports = {
   env: {
@@ -6,11 +6,14 @@ module.exports = {
     commonjs: true,
     es2021: true,
   },
-  extends: 'airbnb-base',
+  extends: "airbnb-base",
   parserOptions: {
-    ecmaVersion: 'latest',
+    ecmaVersion: "latest",
   },
   rules: {
-    'linebreak-style': ['error', os.platform() === 'win32' ? 'windows' : 'unix'],
+    "linebreak-style": [
+      "error",
+      os.platform() === "win32" ? "windows" : "unix",
+    ],
   },
 };

@@ -1,7 +1,7 @@
-const { expect } = require('@japa/expect');
-const { assert } = require('@japa/assert');
-const { specReporter } = require('@japa/spec-reporter');
-const { processCliArgs, configure, run } = require('@japa/runner');
+const { expect } = require("@japa/expect");
+const { assert } = require("@japa/assert");
+const { specReporter } = require("@japa/spec-reporter");
+const { processCliArgs, configure, run } = require("@japa/runner");
 
 /*
 |--------------------------------------------------------------------------
@@ -19,7 +19,7 @@ const { processCliArgs, configure, run } = require('@japa/runner');
 configure({
   ...processCliArgs(process.argv.slice(2)),
   ...{
-    files: ['tests/**/*.spec.js'],
+    files: ["tests/**/*.spec.js"],
     plugins: [assert(), expect()],
     reporters: [specReporter()],
     importer: (filePath) => require(filePath),
