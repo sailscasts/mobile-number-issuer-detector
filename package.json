@@ -8,7 +8,7 @@
 		"test": "tests"
 	},
 	"scripts": {
-		"test": "node bin/test.js",
+		"test": "node tests/test.js",
 		"dev": "npx webpack --mode=development",
 		"prepare": "husky install",
 		"lint": "eslint . --fix --max-warnings=0",
