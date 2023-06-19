@@ -1,4 +1,4 @@
-import { PredictDigit } from './predict-digit';
+import { predictDigit } from './predict-digit';
 
 // check if DOM is loaded first
 document?.addEventListener('DOMContentLoaded', () => {
@@ -11,7 +11,7 @@ document?.addEventListener('DOMContentLoaded', () => {
 	detectButton?.addEventListener('click', () => {
 		const number = numberInput.value; // get the value of input
 
-		const provider = PredictDigit(number); // send to algorithm
+		const provider = predictDigit(number); // send to algorithm
 
 		resultElement.textContent = `${provider} - ${number}`; // send response to html
 
