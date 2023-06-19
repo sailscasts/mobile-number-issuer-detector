@@ -6,18 +6,18 @@ Given a particular Nigerian mobile phone number, this project detects what ISP p
 
 ## Evolutions
 
-- A function that implements the algorithm to solve this problem
-- A UI to accept the numbers and then output the ISP provider
+- [x] A function that implements the algorithm to solve this problem
+- [x] A UI to accept the numbers and then output the ISP provider
 
 ## Project requirements
 - Automated tests
-  -  Unit test the algorithm with a subset of numbers
+  - Unit test the algorithm with a subset of numbers
   - Setup e2e tests for evolution #2
 
 ### Contributors
 
-<a href="https://github.com/Sailscasts/mobile-number-issuer-detector/graphs/contributors">
+<a href="https://github.com/sailscasts/mobile-number-issuer-detector/graphs/contributors">
   <p align="center">
-    <img src="https://contrib.rocks/image?repo=Sailscasts/mobile-number-issuer-detector" alt="A table of avatars from the project's contributors"/>
+    <img src="https://contrib.rocks/image?repo=sailscasts/mobile-number-issuer-detector" />
   </p>
 </a>
