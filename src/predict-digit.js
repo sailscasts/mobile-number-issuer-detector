@@ -1,15 +1,15 @@
 // get json file
 const dataset = require('../assets/prefixes.json');
 const en = require('./locale/en');
-const CheckFormat = require('./utils/check-format');
+const checkFormat = require('./utils/check-format');
 
-function PredictDigit(digit) {
+function predictDigit(digit) {
 	// two variables, one to hold output and
 	// the other for if predicted or not
 	let result;
 	let success = false;
 
-	const check = CheckFormat(digit);
+	const check = checkFormat(digit);
 
 	for (const key in dataset) {
 		// get array for each key
@@ -37,4 +37,4 @@ function PredictDigit(digit) {
 	return result;
 }
 
-module.exports = { PredictDigit };
+module.exports = { predictDigit };
