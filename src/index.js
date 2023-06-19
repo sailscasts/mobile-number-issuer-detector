@@ -1,4 +1,4 @@
-import { predictDigit } from './predict-digit';
+const { predictDigit } = require("./predict-digit");
 
 // check if DOM is loaded first
 document?.addEventListener('DOMContentLoaded', () => {
