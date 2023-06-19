@@ -1,4 +1,4 @@
-const { assert } = require('@japa/assert')
+const { assert } = require('@japa/assert');
 const { specReporter } = require('@japa/spec-reporter')
 const { processCliArgs, configure, run } = require('@japa/runner')
 
