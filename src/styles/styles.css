@@ -1,67 +1,68 @@
 body {
-  background-color: rgba(81, 29, 102, 0.357);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  margin: 0;
-  padding: 20px;
-}
-
-.container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  margin-bottom: 200px;
-}
-
-h1 {
-  font-weight: bold;
-}
-
-p {
-  font-weight: 600;
-}
-
-.input-field {
-  margin-bottom: 20px;
-  width: 350px;
-  height: 30px;
-  border-radius: 10px;
-  text-align: center;
-  font-weight: bolder;
-}
-
-button {
-  padding: 10px 20px;
-  background-color: rgba(74, 16, 97, 0.988);
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: rgba(59, 13, 77, 0.988);
-}
-
-button:active {
-  background-color: rgba(64, 23, 80, 0.568);
-}
-#result {
-  font-size: 20px;
-  font-weight: bold;
-  margin-top: 20px;
-}
-
-footer {
-  text-align: center;
-  position: fixed;
-  bottom: 10px;
-  width: 100%;
-}
-footer a {
-  color: rgba(74, 16, 97, 0.988);
-}
+    background-color: rgba(81, 29, 102, 0.357);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+  }
+  
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 200px;
+  }
+  
+  h1 {
+    font-weight: bold;
+  }
+  
+  p {
+    font-weight: 600;
+  }
+  
+  .input-field {
+    margin-bottom: 20px;
+    width: 350px;
+    height: 30px;
+    border-radius: 10px;
+    text-align: center;
+    font-weight: bolder;
+  }
+  
+  button {
+    padding: 10px 20px;
+    background-color: rgba(74, 16, 97, 0.988);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: rgba(59, 13, 77, 0.988);
+  }
+  
+  button:active {
+    background-color: rgba(64, 23, 80, 0.568);
+  }
+  #result {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 20px;
+  }
+  
+  footer {
+    text-align: center;
+    position: fixed;
+    bottom: 10px;
+    width: 100%;
+  }
+  footer a {
+    color: rgba(74, 16, 97, 0.988);
+  }
+  

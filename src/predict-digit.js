@@ -1,40 +1,38 @@
-// get json file
-const dataset = require('../assets/prefixes.json')
-const en = require('./utils/en')
-const checkFormat = require('./utils/check-format')
+import dataset from '../assets/prefixes.json' assert {type: 'json'};
+import en from './utils/en.js';
+import {checkFormat} from './utils/check-format.js';
 
-function predictDigit(digit) {
+export function predictDigit(digit) {
   // two variables, one to hold output and
   // the other for if predicted or not
-  let result
-  let success = false
+  let result;
+  let success = false;
 
-  const check = checkFormat(digit)
+  const check = checkFormat(digit);
 
   for (const key in dataset) {
     // get array for each key
+    // eslint-disable-next-line no-unused-vars
     dataset[key].forEach((value, index, array) => {
       if (check == true) {
         // slice the digit to match each prefix in the array
-        const prefix = digit.slice(0, value.length)
+        const prefix = digit.slice(0, value.length);
 
         // compare input with prefix in array
         if (prefix === value) {
-          success = true
-          result = key
+          success = true;
+          result = key;
         }
       } else {
-        success = true
-        result = check
+        success = true;
+        result = check;
       }
-    })
+    });
   }
 
   if (!success) {
-    result = en.no_issuer_found
+    result = en.no_issuer_found;
   }
 
-  return result
+  return result;
 }
-
-module.exports = {predictDigit}

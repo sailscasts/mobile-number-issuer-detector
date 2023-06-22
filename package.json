@@ -4,12 +4,15 @@
   "description": "This is a Sailscasts community project that detects the ISP provider of a mobile number.",
   "main": "src/index.js",
   "private": true,
+  "type": "module",
   "directories": {
     "test": "tests"
   },
   "scripts": {
     "test": "node tests/test.js",
-    "dev": "npx webpack --mode=development",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
     "prepare": "husky install",
     "lint": "eslint . --fix --max-warnings=0",
     "format": "prettier . --write"
@@ -35,10 +38,12 @@
     "eslint-plugin-import": "^2.27.5",
     "husky": "^8.0.0",
     "prettier": "2.8.8",
-    "webpack": "^5.87.0",
-    "webpack-cli": "^5.1.4"
+    "vite": "^4.3.9"
   },
   "lint-staged": {
     "*.--write": "npm run format"
+  },
+  "dependencies": {
+    "@japa/run-failed-tests": "^1.1.1"
   }
 }
