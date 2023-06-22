@@ -2,7 +2,7 @@ import {test} from '@japa/runner';
 
 import en from '../src/utils/en.js';
 
-import { predictDigit } from '../src/predict-digit.js?assert=json';
+import { predictDigit } from '../src/predict-digit.js';
 
 test.group('Check the number format', group => {
   test(`return ${en.invalid_dial_code} when number is 09090`, ({expect}) => {
