@@ -1,4 +1,4 @@
-import { predictDigit } from './predict-digit.mjs';
+import { predictDigit } from './predict-digit.js';
 
 // check if DOM is loaded first
 document?.addEventListener('DOMContentLoaded', () => {

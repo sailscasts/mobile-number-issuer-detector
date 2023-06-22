@@ -1,6 +1,6 @@
 import dataset from '../assets/prefixes.json' assert {type: 'json'};
 import en from './utils/en.js';
-import {checkFormat} from './utils/check-format.mjs';
+import {checkFormat} from './utils/check-format.js';
 
 export function predictDigit(digit) {
   // two variables, one to hold output and
