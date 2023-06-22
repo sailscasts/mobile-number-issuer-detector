@@ -1,4 +1,25 @@
-# Ignore artifacts:
-build
-coverage
-node_modules
+{
+  "arrowParens": "avoid",
+  "bracketSpacing": false,
+  "endOfLine": "lf",
+  "htmlWhitespaceSensitivity": "css",
+  "insertPragma": false,
+  "jsxSingleQuote": false,
+  "printWidth": 80,
+  "overrides": [
+    {
+      "files": "*.md",
+      "options": {
+        "printWidth": 1000
+      }
+    }
+  ],
+  "proseWrap": "always",
+  "quoteProps": "as-needed",
+  "requirePragma": false,
+  "semi": true,
+  "singleQuote": true,
+  "tabWidth": 2,
+  "trailingComma": "all",
+  "useTabs": false
+}

@@ -1,7 +1,8 @@
-const {expect} = require('@japa/expect')
-const {assert} = require('@japa/assert')
-const {specReporter} = require('@japa/spec-reporter')
-const {processCliArgs, configure, run} = require('@japa/runner')
+import { expect } from '@japa/expect';
+import { pathToFileURL } from 'node:url';
+import { specReporter } from '@japa/spec-reporter';
+import { runFailedTests } from '@japa/run-failed-tests';
+import { processCliArgs, configure, run } from '@japa/runner';
 
 /*
 |--------------------------------------------------------------------------
@@ -17,14 +18,15 @@ const {processCliArgs, configure, run} = require('@japa/runner')
 | Please consult japa.dev/runner-config for the config docs.
 */
 configure({
+  // eslint-disable-next-line no-undef
   ...processCliArgs(process.argv.slice(2)),
   ...{
     files: ['tests/**/*.spec.js'],
-    plugins: [assert(), expect()],
+    plugins: [expect(), runFailedTests()],
     reporters: [specReporter()],
-    importer: filePath => require(filePath),
+    importer: (filePath) => import(pathToFileURL(filePath).href),
   },
-})
+});
 
 /*
 |--------------------------------------------------------------------------
@@ -34,4 +36,4 @@ configure({
 | The following "run" method is required to execute all the tests.
 |
 */
-run()
+run();
