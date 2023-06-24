@@ -24,7 +24,7 @@ document?.addEventListener('DOMContentLoaded', () => {
 
       resultElement.textContent = `${provider} - ${number}`; // send response to html
 
-      resetInput(numberInput) // reset input
+      resetInput(numberInput) 
     }
     
     else if (csvFile) {
