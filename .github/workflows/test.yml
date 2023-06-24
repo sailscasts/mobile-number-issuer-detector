@@ -11,7 +11,7 @@ on:
       - develop
 
 jobs:
-  prettier:
+  test:
     runs-on: ubuntu-latest
 
     steps:
@@ -27,4 +27,4 @@ jobs:
         run: npm install
 
       - name: Run Test
-        run: npm run test
+        run: npm test
