@@ -9,7 +9,7 @@
     "test": "tests"
   },
   "scripts": {
-    "test": "node tests/test.js",
+    "test": "node tests/detector.spec.js",
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
