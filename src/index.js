@@ -10,25 +10,26 @@ document?.addEventListener('DOMContentLoaded', () => {
 
   // check if button is loaded in DOM first
   detectButton?.addEventListener('click', () => {
-    const number = numberInput.value; // get the value of input
 
-    if (number) {
-      const provider = predictDigit(number); // send to algorithm
+    if (numberInput.value) {
+      const provider = predictDigit(numberInput.value); // send to algorithm
 
-      resultElement.textContent = `${provider} - ${number}`; // send response to html
+      resultElement.textContent = `${provider} - ${numberInput.value}`; // send response to html
 
-      resetInput(numberInput) // reset input
+      numberInput.value = '' // reset input
+      document.getElementById('thead').innerHTML = ''
+      document.getElementById('tbody').innerHTML = ''
     }
     
     else if (csv.value) {
       const reader = new FileReader()
       reader.onload = () => {
         const numbers = d3.csvParse(reader.result)
-        console.log(detectIsp(numbers))
-        // document.getElementById('result').innerHTML = detectIsp(numbers)
+        document.getElementById('result').innerHTML = ''
+        toHtml(numbers)
       }
       if(csvFile.files[0]) reader.readAsText(csvFile.files[0])
-      resetInput(csv)
+      csv.value = ''
     }
 
     else {
@@ -38,14 +39,21 @@ document?.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-function resetInput(field) {
-  if (field.value !== '') {
-    field.value = '';
+function toHtml(obj) {
+  let thead = `
+  <th>S/N</th>
+  <th>Number</th>
+  <th>ISP</th>
+  `
+  document.getElementById('thead').innerHTML += thead
+  for (let i = 0; i < obj.length; i++) {
+    let row = `
+      <tr>
+        <td>${obj[i].id}</td>
+        <td>${'0'+obj[i].Number}</td>
+        <td>${predictDigit('0'+obj[i].Number)}</td>
+      </tr>
+    `
+    document.getElementById('tbody').innerHTML += row
   }
-}
-
-function detectIsp(obj) {
-  for (let i = 0; i < obj.length; i++)
-    obj[i]['isp'] = predictDigit(`0${obj[i].Number}`)
-  return obj
 }
