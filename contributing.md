@@ -1,4 +1,4 @@
-# Contributing to MIND
+ # Contributing to MIND
 
 Welcome to the Community Project! Thank you for your interest in contributing. We value your contributions and want to ensure the contribution process is easy and effective for everyone involved. Please take a moment to read the guidelines below before submitting your pull request.
 
@@ -6,50 +6,41 @@ Welcome to the Community Project! Thank you for your interest in contributing. W
 
 This project is a tool that detects the ISP of a Nigerian mobile number. It helps users identify the network provider associated with a given mobile number.
 
-## Getting Started
+## Contribution Workflow
 
-To contribute to the project, please follow these steps:
+At MIND, we adhere to the [Gitflow branching model](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow). Our contribution workflow involves utilizing the develop branch as the central branch for active development. Therefore, we request that all Pull Requests be targeted towards the develop branch instead of the main branch. This approach ensures the stability of our main branch while allowing continuous development on the develop branch.
 
-## Pull requests
+## Pull Request Etiquette
 
-1. [Fork](https://help.github.com/articles/fork-a-repo) the project, clone your fork, and configure the remotes:
+To ensure a smooth review process, please follow these guidelines:
 
-   ```bash
-   # Clone your fork of the repo into the current directory
-   git clone https://github.com/<your-username>/sailscasts/mobile-number-issuer-detector/.git
-   # Navigate to the newly cloned directory
-   cd  mobile-number-issuer-detector
-   ```
+- Fork and clone (https://help.github.com/articles/fork-a-repo) the repository into your own account. If you cloned the repository some time ago, it's recommended to fetch the latest changes from the upstream repository. You can do this by running the following command: `git checkout develop` , `git pull upstream develop`
 
-2. If you cloned the repository some time ago, it's recommended to fetch the latest changes from the upstream repository. You can do this by running the following command:
+- In your forked repository, create a new branch: `git checkout -b my-branch develop`
+- Make your changes/fixes.
+- Commit your code with a descriptive commit message [using "Conventionalcommits"](https://www.conventionalcommits.org/en/v1.0.0/).
+- Push your branch to GitHub: `git push origin my-branch`
+- [Open a Pull Request](https://help.github.com/articles/using-pull-requests/) with a clear title and description matching the issue you intend to solve.
 
-   ```bash
-   git checkout main
-   git pull upstream main
+> ⚠️IMPORTANT **Note**
+>
+> ** To facilitate a smoother review process, we kindly ask you to use the following format for the Pull Request title:`[chore]`, `[feat]`, or `[fix]`, followed by a descriptive title. For instace, a feat-related change could have a title like `[feat] setup pasword reset`. This helps us categorize and understand the nature of the changes made in each PR..**
 
-   ```
+   - Link the issue you have resolved in the Pull Request Template using the following syntax:
+   - If your Pull Request fixes issue #25, add `Fixes #25` to the description.
+   - If your Pull Request addresses multiple issues, list them using the same syntax (`Fixes #23, Fixes #15`) however, we'll advise you create seperate PRs for each.
 
-   Alternatively, you can choose to fork and clone the repository again
+   This helps us track and automatically close the relevant issue when your Pull Request is merged.
 
-3. Create a new branch (off the main project development branch) to contain your feature, change, or fix:
+## Commits
 
-   ```bash
-   git checkout -b <branch-name>
-   ```
+ We highly encourage the use of conventional commits. Here are some examples:
 
-4. Push your code to the remote repository-your fork:
+  - **feat:** Use this when introducing a new feature.
+  - **fix:**  Use this when resolving any issues in the codebase.
+  - **chore:** Use this when adding new links/resources or making minor changes.
+    (e.g, [chore]: Add database credentials)
+  - Please ensure that your **commit messages are concise and clear**.
+  - Write commit messages in the **present tense**, as they reflect the current state of the codebase after the changes have been applied.
 
-   ```bash
-   git push -u origin <branch-name>
-   ```
-
-5. [Open a Pull Request](https://help.github.com/articles/using-pull-requests/) with a clear title and description.
-
-## Pull Request Guidelines
-
-- Make sure your code adheres to the project's coding style and conventions.
-- Write clear and concise commit messages that describe the changes made.
-- Ensure your code is well-documented and includes any necessary updates to the project's documentation.
-- Your pull request will not be merged if it does not follow the Conventional Commit guidelines for commit messages.
-
-### **Note:** Please make sure to follow the project's coding style and conventions, provide appropriate documentation updates, and ensure your commit messages adhere to the [Conventional Commit guidelines.] (https://www.conventionalcommits.org/en/v1.0.0/)
+For additional reference, check out [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/)
