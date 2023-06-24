@@ -1,5 +1,5 @@
 import { expect } from '@japa/expect';
-import { pathToFileURL } from 'node:url';
+import { fileURLToPath } from 'node:url';
 import { specReporter } from '@japa/spec-reporter';
 import { runFailedTests } from '@japa/run-failed-tests';
 import { processCliArgs, configure, run } from '@japa/runner';
@@ -24,7 +24,7 @@ configure({
     files: ['tests/**/*.spec.js'],
     plugins: [expect(), runFailedTests()],
     reporters: [specReporter()],
-    importer: (filePath) => import(pathToFileURL(filePath).href),
+    importer: (filePath) => import(fileURLToPath(filePath)),
   },
 });
 
