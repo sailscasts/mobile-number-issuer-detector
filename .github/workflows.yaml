@@ -28,3 +28,6 @@ jobs:
 
       - name: Run Prettier
         run: npm run format
+
+      - name: Run Test
+        run: npm run test
