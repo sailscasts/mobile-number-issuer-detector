@@ -1,11 +1,5 @@
 import { predictDigit } from './predict-digit.js';
 
-function resetInput(field) {
-  if (field.value !== '') {
-    field.value = '';
-  }
-}
-
 // check if DOM is loaded first
 document?.addEventListener('DOMContentLoaded', () => {
   // get all inputs by ID
@@ -18,8 +12,6 @@ document?.addEventListener('DOMContentLoaded', () => {
   detectButton?.addEventListener('click', () => {
     const number = numberInput.value; // get the value of input
 
-    const csvFile = csv.value
-
     if (number) {
       const provider = predictDigit(number); // send to algorithm
 
@@ -28,8 +20,14 @@ document?.addEventListener('DOMContentLoaded', () => {
       resetInput(numberInput) // reset input
     }
     
-    else if (csvFile) {
-      console.log('File!')
+    else if (csv.value) {
+      const reader = new FileReader()
+      reader.onload = () => {
+        const numbers = d3.csvParse(reader.result)
+        console.log(detectIsp(numbers))
+        // document.getElementById('result').innerHTML = detectIsp(numbers)
+      }
+      if(csvFile.files[0]) reader.readAsText(csvFile.files[0])
       resetInput(csv)
     }
 
@@ -37,7 +35,17 @@ document?.addEventListener('DOMContentLoaded', () => {
       resultElement.textContent = 'Please provide a value to detect';
     }
 
-
-    
   });
 });
+
+function resetInput(field) {
+  if (field.value !== '') {
+    field.value = '';
+  }
+}
+
+function detectIsp(obj) {
+  for (let i = 0; i < obj.length; i++)
+    obj[i]['isp'] = predictDigit(`0${obj[i].Number}`)
+  return obj
+}
