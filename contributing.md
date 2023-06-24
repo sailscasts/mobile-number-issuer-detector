@@ -39,7 +39,7 @@ To ensure a smooth review process, please follow these guidelines:
   - **feat:** Use this when introducing a new feature.
   - **fix:**  Use this when resolving any issues in the codebase.
   - **chore:** Use this when adding new links/resources or making minor changes.
-    (e.g, [chore]: Add database credentials)
+    (e.g, `[chore]: Add database credentials`)
   - Please ensure that your **commit messages are concise and clear**.
   - Write commit messages in the **present tense**, as they reflect the current state of the codebase after the changes have been applied.
 
