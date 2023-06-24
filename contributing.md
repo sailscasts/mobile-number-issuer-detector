@@ -16,10 +16,10 @@ To ensure a smooth review process, please follow these guidelines:
 
 - Fork and clone (https://help.github.com/articles/fork-a-repo) the repository into your own account. If you cloned the repository some time ago, it's recommended to fetch the latest changes from the upstream repository. You can do this by running the following command: `git checkout develop` , `git pull upstream develop`
 
-- In your forked repository, create a new branch: `git checkout -b my-branch develop`
+- In your forked repository, create a new branch: `git checkout -b <my-branch> develop`
 - Make your changes/fixes.
 - Commit your code with a descriptive commit message [using "Conventionalcommits"](https://www.conventionalcommits.org/en/v1.0.0/).
-- Push your branch to GitHub: `git push origin my-branch`
+- Push your branch to GitHub: `git push origin <my-branch>`
 - [Open a Pull Request](https://help.github.com/articles/using-pull-requests/) with a clear title and description matching the issue you intend to solve.
 
 > ⚠️IMPORTANT **Note**
