@@ -16,12 +16,12 @@ document?.addEventListener('DOMContentLoaded', () => {
 
   // check if button is loaded in DOM first
   detectButton?.addEventListener('click', () => {
-    const number = numberInput.value; 
+    const number = numberInput.value; // get the value of input
 
     const csvFile = csv.value
 
     if (number) {
-      const provider = predictDigit(number); 
+      const provider = predictDigit(number); // send to algorithm
 
       resultElement.textContent = `${provider} - ${number}`; // send response to html
 
