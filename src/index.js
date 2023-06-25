@@ -1,8 +1,6 @@
 import { predictDigit } from './predict-digit.js';
 
-// check if DOM is loaded first
 document?.addEventListener('DOMContentLoaded', () => {
-  // get all inputs by ID
   const numberInput = document.getElementById('numberInput');
   const detectButton = document.getElementById('detectButton');
   const resultElement = document.getElementById('result');
@@ -12,7 +10,7 @@ document?.addEventListener('DOMContentLoaded', () => {
   detectButton?.addEventListener('click', () => {
 
     if (numberInput.value) {
-      const provider = predictDigit(numberInput.value); // send to algorithm
+      const provider = predictDigit(numberInput.value); 
 
       resultElement.textContent = `${provider} - ${numberInput.value}`; // send response to html
 
