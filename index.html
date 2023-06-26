@@ -4,12 +4,34 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
     <link rel="stylesheet" href="./src/styles/styles.css" />
     <title>MIND</title>
   </head>
   <body>
-    <div class="container">
-      <h1>MIND🕵🏽</h1>
+    <header>
+      <nav>
+        <h1>🕵🏽<span>MIND</span></h1>
+        <ul id="nav-links" class="nav-links">
+          <li>
+            <a href="#about">Home</a>
+          </li>
+          <li>
+            <a href="#about">About</a>
+          </li>
+          <li>
+            <a href="#contact">Contact</a>
+          </li>
+        </ul>
+        <span id="menu-button" class="material-symbols-outlined menu-button">
+          menu
+        </span>
+      </nav>
+    </header>
+    <main class="container">
       <p>
         A simple tool that detects the Internet Service Provider (ISP) of a
         Nigerian mobile number 🔍.
@@ -20,24 +42,17 @@
         class="input-field"
         placeholder="Enter your number"
       />
-      <input
-        id="csvFile"
-        type="file"
-        placeholder="Upload csv"
-        accept=".csv"
-      />
+      <h3>OR</h3>
+      <input id="csvFile" type="file" placeholder="Upload csv" accept=".csv" />
+
       <button id="detectButton">Detect Provider</button>
       <h1 id="result"></h1>
       <table>
-        <thead id="thead">
+        <thead id="thead"></thead>
 
-        </thead>
-
-        <tbody id="tbody">
-
-        </tbody>
+        <tbody id="tbody"></tbody>
       </table>
-    </div>
+    </main>
 
     <footer>
       <p>

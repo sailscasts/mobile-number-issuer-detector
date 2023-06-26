@@ -1,68 +1,231 @@
+/* import font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+/* resets */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* General styles */
 body {
-    background-color: rgba(81, 29, 102, 0.357);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    margin: 0;
-    padding: 20px;
-  }
-  
+  background-color: rgba(81, 29, 102, 0.357);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Navbar */
+header {
+  margin-bottom: 30px;
+  width: 100%;
+  background-color: rgba(74, 16, 97, 0.988);
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+  align-items: center;
+  color: whitesmoke;
+  letter-spacing: 2px;
+}
+
+nav h1 {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.nav-links {
+  display: none;
+  list-style-type: none;
+  transition: all 0.5s ease;
+}
+
+.nav-links a {
+  color: whitesmoke;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.nav-links a.active {
+  border-bottom: 2px solid whitesmoke;
+}
+
+.menu-button {
+  cursor: pointer;
+}
+
+.show-menu {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  gap: 1.5rem;
+  top: 60px;
+  left: 0;
+  width: 100%;
+  background-color: rgba(74, 16, 97, 0.988);
+  padding: 20px;
+  line-height: 1.5;
+  padding-bottom: 40px;
+  transition: all 0.5s ease;
+  padding-top: 30px;
+}
+
+/* main */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 200px;
+  gap: 1rem;
+}
+
+h1 {
+  font-weight: bold;
+}
+
+.container p {
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+  width: 85%;
+  text-align: justify;
+}
+
+.input-field {
+  width: 350px;
+  border-radius: 10px;
+  padding: 20px;
+  font-weight: bolder;
+  outline: none;
+  border: none;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
+  margin-top: 12px;
+  font-size: 1.3rem;
+}
+
+.input-field::placeholder {
+  font-size: 1.1rem;
+  color: #333;
+  font-weight: 300;
+  letter-spacing: 2px;
+}
+
+.input-field:focus {
+  border: 1px solid rgba(74, 16, 97, 0.988);
+}
+
+#csvFile {
+  border: none;
+  background-color: rgba(74, 16, 97, 0.1);
+  color: rgba(74, 16, 97, 0.988);
+  border-radius: 30px;
+  padding: 18px 35px;
+  font-size: 1rem;
+}
+
+button {
+  padding: 18px 30px;
+  background-color: rgba(74, 16, 97, 0.988);
+  color: whitesmoke;
+  border-radius: 7px;
+  cursor: pointer;
+  width: 350px;
+  margin-top: 40px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  word-spacing: 2px;
+  font-weight: 600;
+  border: none;
+}
+
+button:hover {
+  background-color: rgba(59, 13, 77, 0.988);
+}
+
+button:active {
+  background-color: rgba(64, 23, 80, 0.568);
+}
+
+#result {
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 20px;
+  color: red;
+  word-spacing: 2px;
+  letter-spacing: 1px;
+}
+
+footer {
+  text-align: center;
+  position: fixed;
+  bottom: 10px;
+  width: 100%;
+}
+footer a {
+  color: rgba(74, 16, 97, 0.988);
+  text-decoration: none;
+}
+footer a:hover {
+  color: rgba(74, 16, 97, 0.988);
+  text-decoration: underline;
+}
+
+/* media queries */
+@media screen and (min-width: 768px) {
   .container {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  nav {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .nav-links {
     display: flex;
-    flex-direction: column;
     align-items: center;
+    gap: 1.5rem;
+  }
+  .menu-button {
+    display: none;
+  }
+  .container p {
+    width: 85%;
+    font-size: 1.3rem;
     text-align: center;
-    margin-bottom: 200px;
   }
-  
-  h1 {
-    font-weight: bold;
+  .input-field {
+    width: 500px;
   }
-  
-  p {
+  #csvFile {
+    padding: 20px 40px;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .nav-links a {
+    color: whitesmoke;
+    font-size: 1.4rem;
     font-weight: 600;
   }
-  
+  nav h1 {
+    font-size: 2rem;
+  }
+  .container p {
+    width: 73%;
+    font-size: 1.5rem;
+  }
   .input-field {
-    margin-bottom: 20px;
-    width: 350px;
-    height: 30px;
-    border-radius: 10px;
-    text-align: center;
-    font-weight: bolder;
+    width: 700px;
   }
-  
   button {
-    padding: 10px 20px;
-    background-color: rgba(74, 16, 97, 0.988);
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+    width: 450px;
+    font-size: 1.1rem;
   }
-  
-  button:hover {
-    background-color: rgba(59, 13, 77, 0.988);
-  }
-  
-  button:active {
-    background-color: rgba(64, 23, 80, 0.568);
-  }
-  #result {
-    font-size: 20px;
-    font-weight: bold;
-    margin-top: 20px;
-  }
-  
-  footer {
-    text-align: center;
-    position: fixed;
-    bottom: 10px;
-    width: 100%;
-  }
-  footer a {
-    color: rgba(74, 16, 97, 0.988);
-  }
-  
+}
