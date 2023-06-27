@@ -1,68 +1,99 @@
-body {
-    background-color: rgba(81, 29, 102, 0.357);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    margin: 0;
-    padding: 20px;
-  }
-  
-  .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    margin-bottom: 200px;
-  }
-  
-  h1 {
-    font-weight: bold;
-  }
-  
-  p {
-    font-weight: 600;
-  }
-  
-  .input-field {
-    margin-bottom: 20px;
-    width: 350px;
-    height: 30px;
-    border-radius: 10px;
-    text-align: center;
-    font-weight: bolder;
-  }
-  
-  button {
-    padding: 10px 20px;
-    background-color: rgba(74, 16, 97, 0.988);
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  button:hover {
-    background-color: rgba(59, 13, 77, 0.988);
-  }
-  
-  button:active {
-    background-color: rgba(64, 23, 80, 0.568);
-  }
-  #result {
-    font-size: 20px;
-    font-weight: bold;
-    margin-top: 20px;
-  }
-  
-  footer {
-    text-align: center;
-    position: fixed;
-    bottom: 10px;
-    width: 100%;
-  }
-  footer a {
-    color: rgba(74, 16, 97, 0.988);
-  }
-  
+html, body {
+  background-color: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  color: rgb(20, 19, 19);
+  margin: 0;
+  padding: 0;
+}
+/* styling the container */
+.container {
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10px;
+  padding: 0 10px;
+  height: 90%;
+  width: 70%;
+  background: rgba(71, 68, 68, 0.31);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(71, 68, 68, 0.66);
+}
+/* styling the first input */
+.input-field {
+  border: none;
+  width: 40%;
+  height: 30px;
+  border-radius: 10px;
+  text-align: center;
+  font-weight: bolder;
+}
+.paragraph {
+  margin: 8px 0;
+}
+.fileInput {
+  display: none; /* hide the default of the csv file input */
+}
+.file-label {
+  display: inline-block;
+  padding: 10px 17px;
+  margin: 8px 0;
+  border: none;
+  font-size: 14.10px;
+  font-weight: bolder;
+  border-radius: 8px;
+  background-color: white;
+  color: black;
+  cursor: pointer;
+  transition: 0.3s;
+}  
+/* Adding hover and focus styles */
+.file-label:hover,
+.file-label:focus {
+  background-color:  rgb(91, 166, 228);
+}
+#detectButton {
+  height: 37px;
+  width: 150px;
+  margin: 5px 0;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-size: 13px;
+  font-weight: bold;
+  background-color: rgb(91, 166, 228);
+  transition: 0.3s;
+}
+#detectButton:hover,
+#detectButton:focus {
+  background-color: rgb(64, 145, 211);
+}
+/* footer*/
+footer {
+  text-align: center;
+}
+
+.anchor {
+  color:rgb(15, 104, 177);
+  font-weight: bolder;
+}
+
+@media screen and (max-width: 766px) {
+.container {
+  width: 85%;
+  padding: 0 10px;
+}
+.paragraph1 {
+  line-height: 23px;
+  font-size: 17px;
+  text-align: center;
+}
+.input-field {
+  width: 75%;
+}
+}
