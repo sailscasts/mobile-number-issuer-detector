@@ -14,7 +14,9 @@ At MIND, we adhere to the [Gitflow branching model](https://www.atlassian.com/gi
 
 To ensure a smooth review process, please follow these guidelines:
 
-- Fork and clone (https://help.github.com/articles/fork-a-repo) the repository into your own account. If you cloned the repository some time ago, it's recommended to fetch the latest changes from the upstream repository. You can do this by running the following command: `git checkout develop` , `git pull upstream develop`
+- Fork and clone (https://help.github.com/articles/fork-a-repo) the repository into your own account. If you cloned the repository some time ago, it's recommended to fetch the latest changes from the upstream repository. You can do this by running the following commands or using the github UI: 
+  - `git checkout develop` and `git pull upstream develop`
+  - (https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/syncing-a-fork)
 
 - In your forked repository, create a new branch: `git checkout -b <my-branch> develop`
 - Make your changes/fixes.
