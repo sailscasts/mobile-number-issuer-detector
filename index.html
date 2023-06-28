@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" href="/assets/favicon_mind-696e52ab.ico">
+  
+  <title>MIND</title>
+  <script type="module" crossorigin src="/assets/index-62472c93.js"></script>
+  <link rel="stylesheet" href="/assets/index-41186f67.css">
+</head>
+<body>
+  <div class="container">
+    <h1>MIND🕵🏽</h1>
+    <p class="paragraph1"> 
+      A simple tool that detects the Internet  Service Provider (ISP) of a
+      Nigerian mobile number 🔍.
+    </p>
+    <input
+      id="numberInput"
+      type="text"
+      class="input-field"
+      placeholder="Enter your number"
+    />
+    <p class="paragraph">Or</p>
+    <input 
+      type="file" 
+      id="csvFile"
+      class="fileInput"
+      accept=".csv"
+    />
+    <label 
+      for="csvFileInput" 
+      class="file-label">
+      Select a CSV File
+    </label>
+    <button 
+      id="detectButton"
+      class="btnStyle">
+      Detect Provider
+      </button>    
+      <h1 id="result"></h1>
+      <table>
+        <thead id="thead">
+    
+        </thead>
+   
+        <tbody id="tbody">
+   
+        </tbody>
+      </table>
+  </div>  
+  <footer>
+    <p>
+      Developed by the
+      <a href=" https://discord.com/invit gbJZuNm" class="anchor">Sailscast Community</a>
+    </p>
+  </footer>
+  <!-- links to javascript tags -->
+  
+  <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+</body>
+</html>
