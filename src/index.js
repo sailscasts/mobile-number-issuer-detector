@@ -15,19 +15,21 @@ document?.addEventListener('DOMContentLoaded', () => {
       resultElement.textContent = `${provider} - ${numberInput.value}`; // send response to html
 
       numberInput.value = '' // reset input
-      document.getElementById('thead').innerHTML = ''
-      document.getElementById('tbody').innerHTML = ''
+      document.getElementById('thead').innerHTML = '';
+      document.getElementById('tbody').innerHTML = '';
     }
     
     else if (csv.value) {
-      const reader = new FileReader()
+      const reader = new FileReader();
       reader.onload = () => {
-        const numbers = d3.csvParse(reader.result)
+        const numbers = d3.csvParse(reader.result);
         document.getElementById('result').innerHTML = ''
-        toHtml(numbers)
+        toHtml(numbers);
       }
-      if(csvFile.files[0]) reader.readAsText(csvFile.files[0])
-      csv.value = ''
+      if(csvFile.files[0]) reader.readAsText(csvFile.files[0]);
+      csv.value = '';
+      document.getElementById('thead').innerHTML = '';
+      document.getElementById('tbody').innerHTML = '';
     }
 
     else {

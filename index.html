@@ -23,23 +23,23 @@
       placeholder="Enter your number"
     />
     <p class="paragraph">Or</p>
+    <label 
+      for="csvFileInput" 
+      class="file-label">
+      Select a CSV File
+    </label>
     <input 
       type="file" 
       id="csvFile"
       class="fileInput"
       accept=".csv"
     />
-    <label 
-      for="csvFileInput" 
-      class="file-label">
-      Select a CSV File
-    </label>
-    <button 
+    <button
       id="detectButton"
       class="btnStyle">
       Detect Provider
-      </button>    
-      <h1 id="result"></h1>
+      </button>
+      <h2 id="result"></h2>
       <table>
         <thead id="thead">
     
