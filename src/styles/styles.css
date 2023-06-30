@@ -37,7 +37,22 @@ html, body {
   margin: 8px 0;
 }
 .fileInput {
-  display: none; /* hide the default of the csv file input */
+  padding: 10px;
+  margin: 5px;
+  border: 1px solid rgb(191, 191, 191);
+  border-radius: 5px;
+  transition: 0.5s;
+}
+.fileInput:hover {
+  cursor: pointer;
+  background-color: rgb(213, 213, 213);
+}
+table {
+  border-collapse: collapse;
+}
+table, td, th {
+  border: 1px solid;
+  padding: 5px;
 }
 .file-label {
   display: inline-block;
@@ -45,18 +60,12 @@ html, body {
   margin: 8px 0;
   border: none;
   font-size: 14.10px;
-  font-weight: bolder;
+  font-weight: bolder;  
   border-radius: 8px;
   background-color: white;
   color: black;
-  cursor: pointer;
   transition: 0.3s;
 }  
-/* Adding hover and focus styles */
-.file-label:hover,
-.file-label:focus {
-  background-color:  rgb(91, 166, 228);
-}
 #detectButton {
   height: 37px;
   width: 150px;
@@ -81,6 +90,10 @@ footer {
 .anchor {
   color:rgb(15, 104, 177);
   font-weight: bolder;
+}
+
+.result {
+  text-align: center;
 }
 
 @media screen and (max-width: 766px) {

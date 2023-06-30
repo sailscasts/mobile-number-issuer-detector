@@ -10,7 +10,7 @@
   },
   "scripts": {
     "test": "node tests/test.js",
-    "dev": "vite",
+    "dev": "vite --host",
     "build": "vite build",
     "preview": "vite preview --port 8080",
     "prepare": "husky install",
