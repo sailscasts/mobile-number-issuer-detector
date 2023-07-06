@@ -22,3 +22,8 @@ jobs:
           issue-message: 'First Issue'
           pr-message: 'First PR'
       - run: echo "Hello, Detector"
+      - uses: actions/download-artifacts@v3
+      - uses: actions/setup-node@v3
+        with: 
+          node-version: latest
+      - run: node ./test.js
