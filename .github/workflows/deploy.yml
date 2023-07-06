@@ -13,7 +13,7 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Checkout Repostory
         uses: actions/checkout@v3
       - name: First Interaction
         uses: actions/first-interaction@v1.1.1
@@ -24,4 +24,3 @@ jobs:
       - uses: actions/setup-node@v3
         with: 
           node-version: latest
-      - run: node ./test.js
