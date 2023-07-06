@@ -13,7 +13,8 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout
+        uses: actions/checkout@v3
       - name: First Interaction
         uses: actions/first-interaction@v1.1.1
         with:
