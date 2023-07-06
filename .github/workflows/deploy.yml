@@ -1,5 +1,5 @@
 name: Deployment
-run-name: ${{ github.actor }} is learning GitHub Actions
+run-name: ${{ github.actor }} trigerred a event.
 on: [push]
 jobs:
   check-bats-version:
@@ -11,3 +11,4 @@ jobs:
           node-version: '14'
       - run: npm install -g bats
       - run: bats -v
+      - run: echo "Hello, Detector"
