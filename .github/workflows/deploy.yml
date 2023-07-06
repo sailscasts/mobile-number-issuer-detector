@@ -1,6 +1,6 @@
 name: Deployment
 run-name: ${{ github.actor }} triggered an event.
-on: [push]
+on: [push, pull_request]
 jobs:
   deploy:
     runs-on: ubuntu-latest
