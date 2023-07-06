@@ -3,12 +3,12 @@ run-name: ${{ github.actor }} triggered an event.
 on:
   push:
     branches:
-      - main
       - develop
+      - main
   pull_request:
     branches:
-      - main
       - develop
+      - main
 jobs:
   deploy:
     runs-on: ubuntu-latest
