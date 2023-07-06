@@ -1,32 +1,16 @@
-name: Deploy
-
+name: Mobile-Number-Issuer-Detector-Deployment
 on:
   push:
-    branches: main 
+    branches:
+      - main
+      - develop
   pull_request:
-    branches: main 
+    branches:
+      - main
+      - develop
 
 jobs:
-  deploy:
-    runs-on: ubuntu-latest
-
+  print_hello:
+    runs-on: ubuntu_latest
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: 14
-
-      - name: Install dependencies
-        run: npm install
-
-      - name: Build application
-        run: npm run build
-
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
+      - run: echo "Hello Detector"
