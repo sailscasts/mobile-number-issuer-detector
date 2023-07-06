@@ -19,4 +19,4 @@ jobs:
         with:
           repo-token: ${{secrets.GITHUB_TOKEN}}
           issue-message: '${{github.actor}}\'s first issue.'
-          pr-message: ${{github.actor}}\'s first PR.
+          pr-message: '${{github.actor}}\'s first PR.'
