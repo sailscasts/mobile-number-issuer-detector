@@ -15,7 +15,6 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - run: echo "Hello, Detector"
-      - name: First Interaction
       - uses: actions/first-interaction@v1
         with:
           repo-token: ${{secrets.GITHUB_TOKEN}}
