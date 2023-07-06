@@ -15,3 +15,10 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - run: echo "Hello, Detector"
+
+    steps:
+      - uses: actions/first-interaction@v1.1.1
+        with:
+          repo-token: ${{secrets.GITHUB_TOKEN}}
+          issue-message: ${{github.actor}} first issue
+          pr-message: ${{github.actor}} first PR 
