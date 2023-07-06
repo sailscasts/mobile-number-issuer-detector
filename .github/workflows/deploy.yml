@@ -17,8 +17,8 @@ jobs:
       - run: echo "Hello, Detector"
 
     steps:
-      - uses: actions/first-interaction@v1.1.1
+      - uses: actions/first-interaction@v1
         with:
           repo-token: ${{secrets.GITHUB_TOKEN}}
-          issue-message: ${{github.actor}} first issue
-          pr-message: ${{github.actor}} first PR 
+          issue-message: 'first issue'
+          pr-message: 'first PR' 
