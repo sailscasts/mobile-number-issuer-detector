@@ -3,8 +3,8 @@ run-name: ${{github.actor}} trigger an event.
 
 on: [push]
 jobs:
-  print_hello:
-    runs-on: ubuntu_latest
+  print-hello:
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
       - uses: actions/checkout@v3
