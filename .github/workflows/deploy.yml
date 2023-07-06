@@ -1,25 +1,13 @@
 name: Deployment
-run-name: ${{ github.actor }} trigger an event.
-
-on:
-  push:
-    branches:
-      - main
-      - develop
-  pull_request:
-    branches:
-      - main
-      - develop
-      
+run-name: ${{ github.actor }} is learning GitHub Actions
+on: [push]
 jobs:
-  print-hello:
+  check-bats-version:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Repository
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
           node-version: '14'
-      - run: npm intall -g bats
+      - run: npm install -g bats
       - run: bats -v
-      - run: echo "Hello, Detector"
