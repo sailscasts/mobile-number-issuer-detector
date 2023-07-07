@@ -35,10 +35,13 @@ jobs:
         run: pnpm install
         
       - name: Build 🏗️
-        run: pnpm run build
+        run: |
+          pnpm store prune 
+          pnpm run build
       
       - name: Deploy to GH Pages 🚀
         uses: peaceiris/actions-gh-pages@v3
+        if: github.ref == 'refs/heads/develop'
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
