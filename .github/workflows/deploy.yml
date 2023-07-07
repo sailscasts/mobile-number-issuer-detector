@@ -1,5 +1,5 @@
 name: Deployment
-run-name: ${{ github.actor }} make a ${{github.event_name}} to the ${{ github.repostory }} repository.
+run-name: ${{ github.actor }} make a ${{github.event_name}} to the ${{ github.repository }} repository.
 on:
   push:
     branches:
