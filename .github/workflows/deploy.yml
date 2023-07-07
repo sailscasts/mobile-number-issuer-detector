@@ -1,5 +1,5 @@
 name: Deployment
-run-name: ${{ github.actor }} make a ${{github.event_name}} event.
+run-name: ${{ github.actor }} make a ${{github.event_name}} to the ${{ github.repostory }} repository.
 on:
   push:
     branches:
@@ -14,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
-      
+
     steps:
       - name: Checkout Repostory 🛎️
         uses: actions/checkout@v3
@@ -47,6 +47,7 @@ jobs:
       - name: Deploy to GH Pages 🚀
         uses: peaceiris/actions-gh-pages@v3
         if: github.ref == 'refs/heads/develop'
+        if: github.ref == 'refs/heads/main'
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
