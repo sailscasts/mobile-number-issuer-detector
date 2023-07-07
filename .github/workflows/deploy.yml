@@ -13,14 +13,32 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Repostory
+      - name: Checkout Repostory 🛎️
         uses: actions/checkout@v3
+
       - name: First Interaction
         uses: actions/first-interaction@v1.1.1
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           issue-message: 'First Issue'
           pr-message: 'First PR'
-      - uses: actions/setup-node@v3
+
+      - name: Setup Node Environment
+        uses: actions/setup-node@v3
         with: 
           node-version: latest
+
+      - name: Install pnpm
+        run: npm install -g pnpm
+
+      - name: Install 🔧
+        run: pnpm install
+        
+      - name: Build 🏗️
+        run: pnpm run build
+      
+      - name: Deploy to GH Pages 🚀
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
