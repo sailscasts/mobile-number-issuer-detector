@@ -1,5 +1,5 @@
 name: Deployment
-run-name: ${{ github.actor }} triggered an event.
+run-name: ${{ github.actor }} make a ${{github.event_name}} event.
 on:
   push:
     branches:
@@ -12,9 +12,14 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      
     steps:
       - name: Checkout Repostory 🛎️
         uses: actions/checkout@v3
+        with:
+          persist-credentials: false
 
       - name: First Interaction
         uses: actions/first-interaction@v1.1.1
